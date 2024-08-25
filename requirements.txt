@@ -1,2 +1,2 @@
-streamlit
-fastai
+streamlit==1.37.1
+fastai==2.7.13
