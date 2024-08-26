@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result Image</title>
+    <style>
+        body {
+            background-color: #EEEDE1;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+            font-family:times new roman;
+            color: #3D3929;
+        }
+
+        p {
+            text-align: center;
+            font-size: 18px;
+            font-family:times new roman;
+            color: #3D3929;
+        }
+
+        .image-container img {
+            max-width: 90%; /* Adjust the percentage as needed */
+            border-radius: 10px; /* Adjust the radius value as needed */
+            margin: 0 auto;  /*Center the image horizontally */
+            max-height: 90vh;
+        }
+
+        /* For devices smaller than 400px: */
+        .center-p {
+            text-align: center;
+        }
+        
+
+        /* For devices 400px and larger: */
+        @media only screen and (min-width: 768px) {
+            body {
+                padding: 20px 20px 20px 80px;
+            }
+
+            h2 {
+                text-align: left;
+                font-size: 48px;
+            }
+            p {
+                text-align: left;
+                font-size: 24px;
+            }
+
+            .image-container img {
+                max-width: 50%; /* Adjust the percentage as needed */
+                border-radius: 10px; /* Adjust the radius value as needed */
+                margin: 0 auto;  /*Center the image horizontally */
+                margin-top: -300px;
+            }
+        
+            .center-p {
+                text-align: right;
+            }
+        }
+          
+    </style>
+</head>
+<body>
+    <h2>Result</h2>
+    <p> پیش بینی : {{ prediction }} </p>
+    <p> دقت : {{ accuracy }} درصد </p>
+
+    
+    <div class="image-container">
+        <p class="center-p"><img src="data:image/png;base64,{{ detection_img_data }}" alt="Detection Image" class="center"></p>
+    </div>
+</body>
+</html>

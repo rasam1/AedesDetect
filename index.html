@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Image</title>
+    <style>
+        /* Basic Form Styling */
+        body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 20px;
+          background-color: #EEEDE1;
+        }
+        
+        h1 {
+          text-align: center;
+          font-size: 28px;
+          margin-bottom: 20px;
+          font-family:times new roman;
+          color: #3D3929;
+        }
+        
+        .error-message {
+          color: red;
+          margin-bottom: 10px;
+        }
+        
+        form {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 300px;
+          margin: 0 auto;
+          border: 1px solid #ccc;
+          border-color: #D1CDC1;
+          padding: 20px;
+          background-color: #F1EFE7;
+          border-radius: 20px;
+          padding: 30px 50px 30px 50px;
+        }
+        
+        label {
+          display: block;
+          margin-bottom: 5px;
+          font-weight: bold;
+        }
+        
+        input[type="file"] {
+          width: 100%;
+          padding: 8px;
+          border: 1px solid #ccc;
+          margin-bottom: 15px;
+        }
+        
+        button {
+          background-color: #4CAF50;
+          color: white;
+          padding: 10px 20px;
+          border: none;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+          background-color: #C05E3C;
+          border-radius: 10px;
+        }
+        
+        button:hover {
+          background-color: #C96342;
+        }
+
+        #centeredbox {
+            position: absolute;
+            top: 30%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+          }
+          
+        
+        
+    </style>
+</head>
+<body>
+    <div id="centeredbox">
+    <h1>Aedes AI</h1>
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*" required>
+        <button type="submit">Upload</button>
+    </form>
+    </div>
+
+</body>
+</html>
